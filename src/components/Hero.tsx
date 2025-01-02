@@ -1,17 +1,22 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Parallax } from 'react-scroll-parallax';
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center p-6">
-      <div className="animate-fadeIn space-y-6 max-w-3xl">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
+      <Parallax speed={-15}>
+        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10" />
+      </Parallax>
+      
+      <div className="animate-fadeIn space-y-6 max-w-3xl relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold font-mono gradient-text">
           Meet Ravi
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-blue-400">
           Python Developer
         </h2>
-        <p className="text-lg md:text-xl text-gray-300">
+        <p className="text-lg md:text-xl text-muted-foreground">
           Specializing in Django, DevOps, and Data Structures & Algorithms (DSA).
           Building scalable systems and solving complex challenges.
         </p>
