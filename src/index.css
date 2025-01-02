@@ -56,9 +56,14 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
   }
 }
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
+}
+
+canvas {
+  touch-action: none;
 }
