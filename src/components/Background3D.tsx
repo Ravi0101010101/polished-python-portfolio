@@ -38,7 +38,10 @@ function Stars() {
 export const Background3D = () => {
   return (
     <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas
+        camera={{ position: [0, 0, 1] }}
+        style={{ background: 'transparent' }}
+      >
         <Stars />
       </Canvas>
     </div>
