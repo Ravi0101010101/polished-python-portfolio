@@ -1,48 +1,35 @@
-import { Card, CardContent } from "@/components/ui/card";
-
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-20">
-      <h1 className="text-4xl md:text-6xl font-bold mb-8 font-mono gradient-text">About Me</h1>
-      <div className="space-y-8">
-        <Card className="bg-secondary/50 backdrop-blur">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-4 text-blue-400">My Story</h2>
-            <p className="text-lg text-gray-300">
-              I'm a Python Developer with a passion for problem-solving and a flair for creating high-performance, 
-              scalable systems. I specialize in Django, DevOps, and Data Structures & Algorithms (DSA)—bridging 
-              the gap between logic, automation, and creativity.
-            </p>
-          </CardContent>
-        </Card>
+    <div className="min-h-screen bg-background p-8">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <h1 className="text-4xl font-bold mb-8 text-center">About Me</h1>
+        
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">Who Am I?</h2>
+          <p className="text-lg">
+            I'm a skilled Python Developer specializing in Django, DevOps, and Data Structures & Algorithms (DSA). 
+            With a passion for solving complex challenges and building scalable systems, I thrive at the intersection 
+            of backend development, cloud automation, and performance optimization.
+          </p>
+        </section>
 
-        <Card className="bg-secondary/50 backdrop-blur">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-4 text-blue-400">My Process</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">1. Understand & Strategize</h3>
-                <p className="text-gray-300">
-                  I dive deep into understanding your needs, analyzing the core challenges, and crafting 
-                  a roadmap tailored to your goals.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">2. Design & Build</h3>
-                <p className="text-gray-300">
-                  Every line of code is intentional, balancing performance, scalability, and simplicity.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">3. Deliver & Evolve</h3>
-                <p className="text-gray-300">
-                  I ensure that what I build today can scale and evolve for tomorrow. Post-deployment, 
-                  I continue refining for long-term success.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">My Journey</h2>
+          <p className="text-lg">
+            Throughout my career, I've focused on building robust, scalable systems that solve real-world problems. 
+            I've worked extensively with Python, Django, and various cloud platforms, always striving to create 
+            efficient and maintainable solutions.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">My Approach</h2>
+          <p className="text-lg">
+            I believe in writing clean, maintainable code that solves problems effectively. My experience in DevOps 
+            has taught me the importance of automation and scalability, while my background in algorithms helps me 
+            optimize solutions for performance.
+          </p>
+        </section>
       </div>
     </div>
   );
