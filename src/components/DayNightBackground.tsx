@@ -1,8 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 
 export const DayNightBackground = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cloudsRef = useRef<HTMLDivElement>(null);
+  const starsRef = useRef<HTMLDivElement>(null);
+  const celestialBodyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      setMousePosition({ x, y });
+
+      if (celestialBodyRef.current) {
+        celestialBodyRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   useEffect(() => {
     const createCloud = () => {
@@ -35,13 +53,33 @@ export const DayNightBackground = () => {
       requestAnimationFrame(moveCloud);
     };
 
-    const interval = setInterval(createCloud, 10000);
+    const createStar = () => {
+      if (!starsRef.current) return;
+      
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${Math.random() * 3 + 1}s`;
+      
+      starsRef.current.appendChild(star);
+      
+      setTimeout(() => star.remove(), 3000);
+    };
+
+    const cloudInterval = setInterval(createCloud, 10000);
+    const starInterval = setInterval(createStar, 1000);
+    
     for (let i = 0; i < 3; i++) createCloud();
 
     return () => {
-      clearInterval(interval);
+      clearInterval(cloudInterval);
+      clearInterval(starInterval);
       if (cloudsRef.current) {
         cloudsRef.current.innerHTML = '';
+      }
+      if (starsRef.current) {
+        starsRef.current.innerHTML = '';
       }
     };
   }, []);
@@ -50,9 +88,9 @@ export const DayNightBackground = () => {
     <>
       <div className="sky-background" />
       <Parallax speed={-5}>
-        <div className="celestial-body" />
+        <div ref={celestialBodyRef} className="celestial-body transition-transform duration-300 ease-out" />
       </Parallax>
-      <div className="stars" />
+      <div ref={starsRef} className="stars" />
       <div className="aurora" />
       <div ref={cloudsRef} className="fixed inset-0 overflow-hidden pointer-events-none" />
     </>
