@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Parallax } from 'react-scroll-parallax';
+import { Bubbles } from "@/components/Bubbles";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -20,6 +21,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen relative">
+          <Bubbles />
           <Parallax speed={-20}>
             <div className="fixed inset-0 bg-gradient-to-b from-background to-background/50 pointer-events-none" />
           </Parallax>

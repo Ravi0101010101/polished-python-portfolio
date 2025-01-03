@@ -67,3 +67,46 @@
 canvas {
   touch-action: none;
 }
+
+/* Bubble Animation */
+.bubble-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 8s ease-in-out infinite;
+}
+
+:root .bubble {
+  background: rgba(254, 198, 161, 0.4); /* Light mode orange bubbles */
+  box-shadow: 0 0 10px rgba(254, 198, 161, 0.2);
+}
+
+.dark .bubble {
+  background: rgba(37, 99, 235, 0.2); /* Dark mode blue bubbles */
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-35px) translateX(-15px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(15px);
+  }
+}
