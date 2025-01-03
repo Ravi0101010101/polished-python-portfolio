@@ -64,8 +64,77 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
 }
 
-canvas {
-  touch-action: none;
+/* Day/Night Background Effects */
+.sky-background {
+  @apply fixed inset-0 transition-all duration-1000;
+}
+
+:root .sky-background {
+  background: linear-gradient(to bottom, #FEF7CD 0%, #FEC6A1 100%);
+}
+
+.dark .sky-background {
+  background: linear-gradient(to bottom, #1a1f35 0%, #0f172a 100%);
+}
+
+/* Sun/Moon */
+.celestial-body {
+  @apply fixed w-64 h-64 rounded-full transition-all duration-1000 blur-lg;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+:root .celestial-body {
+  background: radial-gradient(circle, #F97316 0%, rgba(249, 115, 22, 0) 70%);
+  box-shadow: 0 0 100px rgba(249, 115, 22, 0.4);
+}
+
+.dark .celestial-body {
+  background: radial-gradient(circle, #e2e8f0 0%, rgba(226, 232, 240, 0) 70%);
+  box-shadow: 0 0 60px rgba(226, 232, 240, 0.2);
+}
+
+/* Stars (Only visible in dark mode) */
+.stars {
+  @apply fixed inset-0 opacity-0 transition-opacity duration-1000;
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.dark .stars {
+  opacity: 1;
+}
+
+/* Clouds */
+.cloud {
+  @apply fixed pointer-events-none opacity-0 transition-opacity duration-1000;
+  filter: blur(3px);
+}
+
+:root .cloud {
+  opacity: 0.6;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dark .cloud {
+  opacity: 0;
+}
+
+/* Aurora (Only visible in dark mode) */
+.aurora {
+  @apply fixed inset-0 opacity-0 transition-opacity duration-1000 mix-blend-screen;
+  background: linear-gradient(45deg, #0ea5e9, #3b82f6, #6366f1);
+  filter: blur(60px);
+}
+
+.dark .aurora {
+  opacity: 0.15;
 }
 
 /* Bubble Animation */
@@ -87,12 +156,12 @@ canvas {
 }
 
 :root .bubble {
-  background: rgba(254, 198, 161, 0.4); /* Light mode orange bubbles */
+  background: rgba(254, 198, 161, 0.4);
   box-shadow: 0 0 10px rgba(254, 198, 161, 0.2);
 }
 
 .dark .bubble {
-  background: rgba(37, 99, 235, 0.2); /* Dark mode blue bubbles */
+  background: rgba(37, 99, 235, 0.2);
   box-shadow: 0 0 10px rgba(37, 99, 235, 0.1);
 }
 
@@ -109,4 +178,8 @@ canvas {
   75% {
     transform: translateY(-20px) translateX(15px);
   }
+}
+
+canvas {
+  touch-action: none;
 }
