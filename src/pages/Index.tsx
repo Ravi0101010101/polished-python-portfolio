@@ -8,12 +8,8 @@ import { ContactForm } from "@/components/ContactForm";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background/50 relative">
+    <div className="min-h-screen relative">
       <div className="relative z-10">
-        <Parallax speed={-20}>
-          <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50 pointer-events-none" />
-        </Parallax>
-        
         <Hero />
         
         <Parallax speed={-10}>
