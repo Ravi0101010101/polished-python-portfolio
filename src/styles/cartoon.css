@@ -1,0 +1,32 @@
+.cartoon-hover {
+  transition: transform 0.3s ease;
+}
+
+.cartoon-popup {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cartoon-title {
+  color: #2563eb;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.5rem;
+}
+
+.cartoon-content {
+  font-family: 'Comic Sans MS', cursive;
+  color: #4b5563;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
