@@ -10,6 +10,7 @@ import { Bubbles } from "@/components/Bubbles";
 import { DayNightBackground } from "@/components/DayNightBackground";
 import { Clock } from "@/components/Clock";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { AudioPlayer } from "@/components/AudioPlayer";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -28,6 +29,7 @@ const App = () => (
           <DayNightBackground />
           <Bubbles />
           <Clock />
+          <AudioPlayer />
           <Parallax speed={-20}>
             <div className="fixed inset-0 bg-gradient-to-b from-background to-background/50 pointer-events-none" />
           </Parallax>
