@@ -1,8 +1,35 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Parallax } from 'react-scroll-parallax';
+import { useEffect } from "react";
+import gsap from "gsap";
 
 export const Hero = () => {
+  useEffect(() => {
+    // Add hover animations to social buttons
+    const buttons = document.querySelectorAll('.social-button');
+    
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', (e) => {
+        gsap.to(e.currentTarget, {
+          scale: 1.1,
+          rotation: 6,
+          duration: 0.3,
+          ease: "back.out(1.7)"
+        });
+      });
+      
+      button.addEventListener('mouseleave', (e) => {
+        gsap.to(e.currentTarget, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.3,
+          ease: "back.out(1.7)"
+        });
+      });
+    });
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
       <Parallax speed={-15}>
@@ -25,10 +52,10 @@ export const Hero = () => {
             variant="outline" 
             size="lg" 
             asChild
-            className="transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-background/80"
+            className="social-button transition-all duration-300 hover:bg-background/80"
           >
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+              <Github className="mr-2 h-5 w-5" />
               GitHub
             </a>
           </Button>
@@ -36,10 +63,10 @@ export const Hero = () => {
             variant="outline" 
             size="lg" 
             asChild
-            className="transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-background/80"
+            className="social-button transition-all duration-300 hover:bg-background/80"
           >
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+              <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
             </a>
           </Button>
@@ -47,10 +74,10 @@ export const Hero = () => {
             variant="outline" 
             size="lg" 
             asChild
-            className="transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-background/80"
+            className="social-button transition-all duration-300 hover:bg-background/80"
           >
             <a href="mailto:your.email@example.com">
-              <Mail className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+              <Mail className="mr-2 h-5 w-5" />
               Contact
             </a>
           </Button>
