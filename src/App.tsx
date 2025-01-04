@@ -9,6 +9,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { Bubbles } from "@/components/Bubbles";
 import { DayNightBackground } from "@/components/DayNightBackground";
 import { Clock } from "@/components/Clock";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -23,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen relative">
+          <ScrollProgress />
           <DayNightBackground />
           <Bubbles />
           <Clock />

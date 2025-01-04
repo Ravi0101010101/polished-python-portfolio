@@ -194,3 +194,38 @@
 canvas {
   touch-action: none;
 }
+
+/* Enhanced Social Icons */
+.social-icon {
+  @apply transition-all duration-300;
+}
+
+.social-icon:hover {
+  @apply scale-110 rotate-6;
+  filter: drop-shadow(0 0 0.5rem currentColor);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  @apply fixed top-0 left-0 w-full h-1 z-50 bg-primary/20;
+}
+
+.scroll-progress-bar {
+  @apply h-full bg-primary transition-all duration-300 ease-out;
+}
+
+/* Enhanced Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-35px) translateX(-15px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(15px);
+  }
+}
