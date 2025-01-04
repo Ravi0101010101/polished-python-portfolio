@@ -14,7 +14,7 @@ export const showCartoonNotification = (title: string, message: string) => {
     customClass: {
       popup: 'cartoon-popup',
       title: 'cartoon-title',
-      content: 'cartoon-content'
+      container: 'cartoon-content'  // Changed from 'content' to 'container' to match SweetAlert2 types
     }
   });
 };
