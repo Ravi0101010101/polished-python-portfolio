@@ -11,6 +11,8 @@ import { DayNightBackground } from "@/components/DayNightBackground";
 import { Clock } from "@/components/Clock";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { AudioPlayer } from "@/components/AudioPlayer";
+import { TerminalLoader } from "@/components/TerminalLoader";
+import { ScrollCharacter } from "@/components/ScrollCharacter";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -25,11 +27,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen relative">
+          <TerminalLoader />
           <ScrollProgress />
           <DayNightBackground />
           <Bubbles />
           <Clock />
           <AudioPlayer />
+          <ScrollCharacter />
           <Parallax speed={-20}>
             <div className="fixed inset-0 bg-gradient-to-b from-background to-background/50 pointer-events-none" />
           </Parallax>
