@@ -5,7 +5,6 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { ContactForm } from "@/components/ContactForm";
-import { ScrollCharacter } from "@/components/ScrollCharacter";
 import { ComicTransition } from "@/components/ComicTransition";
 import { useCartoonEffects } from "@/components/CartoonEffects";
 
@@ -14,7 +13,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      <ScrollCharacter />
       <ComicTransition />
       
       <div className="relative z-10">
