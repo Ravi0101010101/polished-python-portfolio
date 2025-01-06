@@ -70,11 +70,18 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+        drag: {
+          "0%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-3deg)" },
+          "75%": { transform: "rotate(3deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out forwards",
         float: "float 3s ease-in-out infinite",
         blink: "blink 1s step-start infinite",
+        drag: "drag 0.3s ease-in-out",
       },
     },
   },
