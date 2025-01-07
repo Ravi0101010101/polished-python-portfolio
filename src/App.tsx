@@ -26,7 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
+        <div className="relative min-h-screen flex flex-col">
           <TerminalLoader />
           <ScrollProgress />
           <DayNightBackground />
@@ -38,7 +38,7 @@ const App = () => (
             <div className="fixed inset-0 bg-gradient-to-b from-background to-background/50 pointer-events-none" />
           </Parallax>
           <Navigation />
-          <main className="flex-1 pt-16 relative z-10 mb-auto">
+          <main className="flex-1 pt-16 relative z-10">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
@@ -46,7 +46,9 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
-          <Footer />
+          <div className="relative z-20">
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     </TooltipProvider>
