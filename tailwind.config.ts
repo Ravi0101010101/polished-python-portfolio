@@ -76,23 +76,12 @@ export default {
           "75%": { transform: "rotate(3deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
-        wave: {
-          "0%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(-15deg)" },
-          "75%": { transform: "rotate(15deg)" },
-        },
-        bounce: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out forwards",
         float: "float 3s ease-in-out infinite",
         blink: "blink 1s step-start infinite",
         drag: "drag 0.3s ease-in-out",
-        wave: "wave 0.5s ease-in-out",
-        bounce: "bounce 1s ease-in-out infinite",
       },
     },
   },
